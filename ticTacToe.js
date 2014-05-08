@@ -1,15 +1,4 @@
-// NB: This doesn't include any AI.
-
 (function (root) {
-  // if (!(typeof(require) === "undefined")) {
-  //   _ = require('./underscore.js');
-  // }
-  //
-  // var readline = require('readline');
-  // var READER = readline.createInterface({
-  //   input: process.stdin,
-  //   output: process.stdout
-  // });
 
   var TTT = root.TTT = (root.TTT || {});
 
@@ -18,7 +7,7 @@
     this.board = this.makeBoard();
   }
 
-  Game.marks = ["x", "o"];
+  Game.marks = ["red", "blue"];
 
   Game.prototype.diagonalWinner = function () {
     var game = this;
@@ -141,32 +130,14 @@
   };
 
 
-  Game.prototype.run = function () {
+  Game.prototype.turn = function (squareCoords, callback) {
     var game = this;
 
-    game.turn(function(){
-      if (game.winner()) {
-        console.log("Someone won!");
-        READER.close();
-      } else {
-        game.printBoard();
-        game.run();
-      }
-    });
-  }
-
-  Game.prototype.turn = function (callback) {
-    var game = this;
-
-    READER.question("Enter coordinates like [row,column]: ",function(strCoords){
-      var coords = eval(strCoords); // Totally insecure way to parse the string "[1,2]" into the array [1,2].
-      if (game.valid(coords)) {
-        game.move(coords);
-        callback();
-      } else {
-        console.log("Invalid coords!");
-        game.turn(callback);
-      }
-    });
+    if (game.valid(squareCoords)){
+      game.move(squareCoords);
+      callback(this.board, this.winner());
+    } else {
+      callback(false);
+    }
   }
 })(this);
