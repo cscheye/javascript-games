@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake</title>
+  <script src="../underscore.js"></script>
+  <script src="../jquery.js"></script>
+  <script src='coord.js'></script>
+  <script src='snake.js'></script>
+  <script src='snakeUI.js'></script>
+  <script src='board.js'></script>
+
+  <link rel="stylesheet" href="snake.css" type="text/css">
+</head>
+
+<body>
+  <h1>Snake:</h1>
+  <div id='display'>
+  </div>
+
+  <script>
+  var $el = $('#display');
+
+  var b = new S.Board();
+  b.snake.hasSegmentAt(10,10);
+  // var ui = new Snake.SnakeUI($el);
+  // ui.setUpHandlers();
+  // ui.render();
+  </script>
+</body>
+</html>
