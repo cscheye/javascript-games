@@ -13,10 +13,9 @@
 
   var TTT = root.TTT = (root.TTT || {});
 
-  var Game = TTT.Game = function TT($el) {
+  var Game = TTT.Game = function TT() {
     this.player = Game.marks[0];
     this.board = this.makeBoard();
-    this.$el = $el;
   }
 
   Game.marks = ["x", "o"];
@@ -141,41 +140,6 @@
     );
   };
 
-  Game.prototype.printBoard = function () {
-    // var game = this;
-    //
-    // game.board.forEach(function(row){
-    //   var first = row[0] == null ? " " : row[0];
-    //   var second = row[1] == null ? " " : row[1];
-    //   var third = row[2] == null ? " " : row[2];
-    //
-    //   console.log(first + " | " + second + " | " + third);
-    // })
-
-    var htmlString = '';
-    var counter = 0;
-
-    function _make3divs(row){
-      var result = '';
-      for(var i = 0; i < 3; i++){
-        result += '<div class="square" id=' + row + i + '></div>';
-      }
-      return result;
-    }
-
-    _.times(3, function() {
-      htmlString += '<div class="row">';
-      htmlString += _make3divs(counter);
-      counter++;
-      htmlString += '</div>'
-    })
-
-    this.$el.html(htmlString);
-  }
-
-  Game.prototype.renderBoard = function() {
-
-  }
 
   Game.prototype.run = function () {
     var game = this;

@@ -1,0 +1,22 @@
+h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif ;
+  text-align: center;
+}
+
+div.square {
+  outline: black solid 1px;
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+
+div.row:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+#board {
+  margin: 0px auto;
+  width: 450px;
+}

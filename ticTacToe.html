@@ -4,6 +4,8 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src='ticTacToe.js'></script>
+  <script src='ticTacToeUI.js'></script>
+  <link rel="stylesheet" href="ticTacToe.css" type="text/css">
 </head>
 
 <body>
@@ -12,8 +14,8 @@
   </div>
 
   <script>
-    var TTT = new this.TTT.Game($('#board'));
-    TTT.printBoard();
+    var TTT = new this.TTT.UI($('#board'));
+    TTT.makeBoard();
     // TTT.run();
   </script>
 </body>
