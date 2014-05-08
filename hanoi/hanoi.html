@@ -4,18 +4,21 @@
   <title>Towers of Hanoi</title>
   <script src="../underscore.js"></script>
   <script src="../jquery.js"></script>
-  <script src='ticTacToe.js'></script>
-  <script src='ticTacToeUI.js'></script>
-  <link rel="stylesheet" href="ticTacToe.css" type="text/css">
+  <script src='hanoi.js'></script>
+  <script src='hanoiUI.js'></script>
+  <link rel="stylesheet" href="hanoi.css" type="text/css">
 </head>
 
 <body>
   <h1>Towers of Hanoi:</h1>
-  <div id='board'>
+  <div id='display'>
   </div>
 
   <script>
-
+  var $el = $('#display');
+  var ui = new H.HanoiUI($el);
+  ui.setUpHandlers();
+  ui.render();
   </script>
 </body>
 </html>

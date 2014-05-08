@@ -1,0 +1,40 @@
+h1 {
+  text-align: center;
+}
+
+div .tower {
+  outline: black solid 1px;
+  width: 250px;
+  height: 400px;
+  float: left;
+
+  /*displays child elements from bottom up*/
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.highlighted {
+  background-color: AliceBlue;
+}
+
+div .disk {
+  margin: 0px auto;
+  height: 80px;
+  float: left;
+  overflow: auto;
+}
+
+#disk1 {
+  width: 100px;
+  background-color: pink;
+}
+
+#disk2{
+  width: 150px;
+  background-color: aquamarine;
+}
+
+#disk3{
+  width: 200px;
+  background-color: blue;
+}
