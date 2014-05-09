@@ -8,7 +8,7 @@
 
   Snake.prototype.move = function() {
     var firstSegment = this.segments[0];
-    this.segments.shift(firstSegment.plus(this.dir));
+    this.segments.unshift(firstSegment.plus(this.dir));
     this.segments.pop();
   };
 

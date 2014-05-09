@@ -19,10 +19,8 @@
 
   <script>
   var $el = $('#display');
-
-  var b = new S.Board();
-  b.snake.hasSegmentAt(10,10);
-  // var ui = new Snake.SnakeUI($el);
+  var ui = new S.SnakeUI($el);
+  ui.start();
   // ui.setUpHandlers();
   // ui.render();
   </script>
