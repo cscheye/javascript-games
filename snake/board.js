@@ -9,19 +9,13 @@
   var DIM_I = 20;
   var DIM_J = 20;
 
-  Board.prototype.render = function() {
+  Board.prototype.displayString = function() {
     var displayString = '';
     for (var i = 0; i < DIM_I; i++){
       for (var j = 0; j < DIM_J; j++){
-        if (this.snake.hasSegmentAt(i, j)) {
-          displayString += 'S';
-        } else {
-          displayString +='.'
-        }
+        displayString += "<div class='square' id='" + i + "_" + j + "'></div>"
       }
-      displayString += '\n';
     }
     return displayString;
   }
-
 })(this);

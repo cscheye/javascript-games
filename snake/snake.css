@@ -1,0 +1,21 @@
+div.square {
+  height: 20px;
+  width: 20px;
+  float: left;
+  background-color: gainsboro;
+}
+
+
+#display {
+  width: 400px;
+  margin: 0px auto;
+}
+
+div.snake {
+  background-color: green;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Helvetica Neue" sans-serif;
+}
