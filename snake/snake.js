@@ -21,4 +21,9 @@
     });
     return hasSegment;
   };
+
+  Snake.prototype.grow = function() {
+    var lastSeg = this.segments.pop();
+    this.segments.push(lastSeg, lastSeg);
+  }
 })(this);

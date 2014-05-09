@@ -3,7 +3,7 @@
 
   var Board = S.Board = function() {
     this.snake = new S.Snake();
-    this.apples = [];
+    this.apple = new S.Coord(1,1);
   };
 
   var DIM_I = 20;
@@ -17,5 +17,12 @@
       }
     }
     return displayString;
-  }
+  };
+
+  Board.prototype.eatApple = function() {
+    var snakeHead = this.snake.segments[0]
+    if (snakeHead.equals(this.apple)) {
+      this.snake.grow();
+    }
+  };
 })(this);

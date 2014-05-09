@@ -25,4 +25,8 @@
       break;
     }
   };
+
+  Coord.prototype.equals = function(coord) {
+    return this.i === coord.i && this.j === coord.j;
+  }
 })(this);

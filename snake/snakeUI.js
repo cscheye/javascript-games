@@ -6,7 +6,8 @@
     this.board = new S.Board();
     this.snake = this.board.snake;
   };
-  var KEYMAP = S.KEYMAP = {37: 'W', 38:'N', 39:'E', 40:'S'}
+  var KEYMAP = S.KEYMAP = {37: 'W', 38:'N', 39:'E', 40:'S'};
+
 
   SnakeUI.prototype.start = function() {
     $(window).on("keydown",this.handleKeyEvent.bind(this));
@@ -28,7 +29,11 @@
     _.each(this.snake.segments, function(coord, idx) {
       var tagId = '#' + coord.i + '_' + coord.j;
       $(tagId).toggleClass('snake');
-    })
+    });
+
+    var appleCoord = this.board.apple
+    var appleTagId = '#' + appleCoord.i + '_' + appleCoord.j;
+    $(appleTagId).toggleClass('apple');
   };
 
 })(this);
